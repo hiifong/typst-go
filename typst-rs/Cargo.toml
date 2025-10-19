@@ -32,6 +32,7 @@ ttf-parser = "0.25"
 typst-kit = { version = "0.13", features = ["embed-fonts"] }
 typst-pdf = "0.13"
 typst-svg = "0.13"
+openssl = { version = "0.10.74", features = ["vendored"] }
 
 [build-dependencies]
 uniffi = { version = "0.28.3", features = ["build"] }

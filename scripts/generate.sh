@@ -6,7 +6,7 @@ LIB_NAME="libtypst.a"
 RUST_FOLDER="$THIS_SCRIPT_DIR/../typst-rs"
 GO_FOLDER="$THIS_SCRIPT_DIR/../"
 
-TARGETS="aarch64-apple-darwin"
+TARGETS="x86_64-unknown-linux-musl aarch64-unknown-linux-musl aarch64-apple-darwin x86_64-apple-darwin"
 
 if ! command -v cross &> /dev/null; then
     echo "▸ Cross tool not found, installing"
