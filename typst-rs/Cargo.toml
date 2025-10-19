@@ -1,0 +1,46 @@
+[package]
+name = "typst-rs"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "typst"
+crate-type = ["staticlib"]
+
+[[bin]]
+name = "uniffi-bindgen-go"
+path = "src/uniffi_bindgen_go.rs"
+
+[dependencies]
+uniffi = { version = "0.28.3" }
+uniffi-bindgen-go = { git = "https://github.com/NordSecurity/uniffi-bindgen-go.git", tag = "v0.4.0+v0.28.3" }
+
+typst = "0.13"
+comemo = "0.4"
+
+# Fetching and unzipping packages
+zune-inflate = { version = "0.2", default-features = false, features = [
+    "gzip",
+    "std",
+] }
+tar = "0.4"
+ureq = "2.9"
+
+# utils
+time = "0.3"
+ttf-parser = "0.25"
+typst-kit = { version = "0.13", features = ["embed-fonts"] }
+typst-pdf = "0.13"
+typst-svg = "0.13"
+
+[build-dependencies]
+uniffi = { version = "0.28.3", features = ["build"] }
+
+[features]
+cli = ["uniffi/cli"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
