@@ -5,7 +5,7 @@ edition = "2021"
 
 [lib]
 name = "typst"
-crate-type = ["staticlib"]
+crate-type = ["cdylib"]
 
 [[bin]]
 name = "uniffi-bindgen-go"
@@ -15,7 +15,7 @@ path = "src/uniffi_bindgen_go.rs"
 uniffi = { version = "0.28.3" }
 uniffi-bindgen-go = { git = "https://github.com/NordSecurity/uniffi-bindgen-go.git", tag = "v0.4.0+v0.28.3" }
 
-typst = "0.13"
+typst = "0.14"
 comemo = "0.4"
 
 # Fetching and unzipping packages
@@ -29,9 +29,9 @@ ureq = "2.9"
 # utils
 time = "0.3"
 ttf-parser = "0.25"
-typst-kit = { version = "0.13", features = ["embed-fonts"] }
-typst-pdf = "0.13"
-typst-svg = "0.13"
+typst-kit = { version = "0.14", features = ["embed-fonts"] }
+typst-pdf = "0.14"
+typst-svg = "0.14"
 openssl = { version = "0.10.74", features = ["vendored"] }
 
 [build-dependencies]
