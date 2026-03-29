@@ -29,7 +29,7 @@ cargo run \
 
 cp -r "${RUST_FOLDER}/target/go/typst/" "${GO_FOLDER}"
 
-export RUSTFLAGS="-C target-feature=+crt-static"
+# export RUSTFLAGS="-C target-feature=+crt-static"
 
 for TARGET in $TARGETS; do
   echo "▸ Building for $TARGET"
