@@ -383,6 +383,11 @@ static void call_UniffiForeignFutureCompleteVoid(
 RustBuffer uniffi_typst_fn_func_compile_to_pdf(RustBuffer source, RustCallStatus *out_status
 );
 #endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_TYPST_FN_FUNC_COMPILE_TO_SVG
+#define UNIFFI_FFIDEF_UNIFFI_TYPST_FN_FUNC_COMPILE_TO_SVG
+RustBuffer uniffi_typst_fn_func_compile_to_svg(RustBuffer source, RustCallStatus *out_status
+);
+#endif
 #ifndef UNIFFI_FFIDEF_FFI_TYPST_RUSTBUFFER_ALLOC
 #define UNIFFI_FFIDEF_FFI_TYPST_RUSTBUFFER_ALLOC
 RustBuffer ffi_typst_rustbuffer_alloc(uint64_t size, RustCallStatus *out_status
@@ -666,6 +671,12 @@ void ffi_typst_rust_future_complete_void(uint64_t handle, RustCallStatus *out_st
 #ifndef UNIFFI_FFIDEF_UNIFFI_TYPST_CHECKSUM_FUNC_COMPILE_TO_PDF
 #define UNIFFI_FFIDEF_UNIFFI_TYPST_CHECKSUM_FUNC_COMPILE_TO_PDF
 uint16_t uniffi_typst_checksum_func_compile_to_pdf(void
+    
+);
+#endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_TYPST_CHECKSUM_FUNC_COMPILE_TO_SVG
+#define UNIFFI_FFIDEF_UNIFFI_TYPST_CHECKSUM_FUNC_COMPILE_TO_SVG
+uint16_t uniffi_typst_checksum_func_compile_to_svg(void
     
 );
 #endif

@@ -353,6 +353,15 @@ func uniffiCheckChecksums() {
 			panic("typst: uniffi_typst_checksum_func_compile_to_pdf: UniFFI API checksum mismatch")
 		}
 	}
+	{
+		checksum := rustCall(func(_uniffiStatus *C.RustCallStatus) C.uint16_t {
+			return C.uniffi_typst_checksum_func_compile_to_svg()
+		})
+		if checksum != 44860 {
+			// If this happens try cleaning and rebuilding your project
+			panic("typst: uniffi_typst_checksum_func_compile_to_svg: UniFFI API checksum mismatch")
+		}
+	}
 }
 
 type FfiConverterString struct{}
@@ -453,6 +462,14 @@ func CompileToPdf(source string) []byte {
 	return FfiConverterBytesINSTANCE.Lift(rustCall(func(_uniffiStatus *C.RustCallStatus) RustBufferI {
 		return GoRustBuffer{
 			inner: C.uniffi_typst_fn_func_compile_to_pdf(FfiConverterStringINSTANCE.Lower(source), _uniffiStatus),
+		}
+	}))
+}
+
+func CompileToSvg(source string) []byte {
+	return FfiConverterBytesINSTANCE.Lift(rustCall(func(_uniffiStatus *C.RustCallStatus) RustBufferI {
+		return GoRustBuffer{
+			inner: C.uniffi_typst_fn_func_compile_to_svg(FfiConverterStringINSTANCE.Lower(source), _uniffiStatus),
 		}
 	}))
 }

@@ -1,3 +1,4 @@
 namespace typst {
     bytes compile_to_pdf(string source);
+    bytes compile_to_svg(string source);
 };
