@@ -33,6 +33,7 @@ typst-kit = { version = "0.14", features = ["embed-fonts"] }
 typst-pdf = "0.14"
 typst-svg = "0.14"
 openssl = { version = "0.10.74", features = ["vendored"] }
+typst-render = "0.14"
 
 [build-dependencies]
 uniffi = { version = "0.28.3", features = ["build"] }
